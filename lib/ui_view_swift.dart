@@ -7,6 +7,6 @@ class SwiftUiKit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const UiKitView(viewType: playerSwiftUiView);
+    return const SizedBox(height: 50, width: 50, child: UiKitView(viewType: playerSwiftUiView));
   }
 }
