@@ -3,7 +3,7 @@ import UIKit
 
 class FLPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let factory = FLNativeViewFactory(messenger: registrar.messenger(), url: "")
+        let factory = FLNativeViewFactory(messenger: registrar.messenger(), playerArgs: PlayerArgs())
         registrar.register(factory, withId: "FLPlugin")
     }
 }

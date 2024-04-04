@@ -13,6 +13,7 @@
 		293A06D42BBD5DDA00AE9C66 /* VideoPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A06D32BBD5DDA00AE9C66 /* VideoPlayerService.swift */; };
 		293A06D62BBD734B00AE9C66 /* FLNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A06D52BBD734B00AE9C66 /* FLNativeView.swift */; };
 		293A06D82BBD740800AE9C66 /* FLPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A06D72BBD740800AE9C66 /* FLPlugin.swift */; };
+		296215FF2BBEC5080054E058 /* PlayerArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296215FE2BBEC5080054E058 /* PlayerArgs.swift */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		5C72BE92603E9808E594649D /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA372D1E58CEF5FD2F53319 /* Pods_RunnerTests.framework */; };
@@ -54,6 +55,7 @@
 		293A06D32BBD5DDA00AE9C66 /* VideoPlayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerService.swift; sourceTree = "<group>"; };
 		293A06D52BBD734B00AE9C66 /* FLNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLNativeView.swift; sourceTree = "<group>"; };
 		293A06D72BBD740800AE9C66 /* FLPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLPlugin.swift; sourceTree = "<group>"; };
+		296215FE2BBEC5080054E058 /* PlayerArgs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerArgs.swift; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				296215FE2BBEC5080054E058 /* PlayerArgs.swift */,
 				293A06D32BBD5DDA00AE9C66 /* VideoPlayerService.swift */,
 				293A06D12BBD5DB800AE9C66 /* HLSVideoCache.swift */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -396,6 +399,7 @@
 				293A06D42BBD5DDA00AE9C66 /* VideoPlayerService.swift in Sources */,
 				293A06D82BBD740800AE9C66 /* FLPlugin.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				296215FF2BBEC5080054E058 /* PlayerArgs.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				293A06D02BBC1EBB00AE9C66 /* NativeViewFactory.swift in Sources */,
 			);

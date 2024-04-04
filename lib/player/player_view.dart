@@ -1,5 +1,13 @@
+// ignore_for_file: avoid_print
+
+import 'dart:developer';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:prototype/FlutterMethodChannel.dart';
+import 'package:prototype/player/configuration/event_type.dart';
 
 const playerSwiftUiView = 'NativeView';
 
@@ -16,21 +24,70 @@ class PlayerSwiftView extends StatefulWidget {
 }
 
 class _PlayerSwiftViewState extends State<PlayerSwiftView> {
+  BetterPlayerEventType? playerState;
+  @override
   void initState() {
     super.initState();
-    initializeNativePlayerController();
+    init();
+    FlutterNativeCodeListenerMethodChannel.playerChannel!.setMethodCallHandler(callingThisMethodFromSwift);
   }
 
-  initializeNativePlayerController() async {
-    await FlutterNativeCodeListenerMethodChannel.buildPlayerController(widget.link, widget.thumbnail, widget.looping, widget.autoPlay, widget.cacheConfiguration);
+  init() async {
+    FlutterNativeCodeListenerMethodChannel.init();
+    await FlutterNativeCodeListenerMethodChannel.setDataSource(
+      widget.link,
+      widget.thumbnail,
+      widget.looping,
+      widget.autoPlay,
+      widget.cacheConfiguration,
+    );
+  }
+
+  Future<void> callingThisMethodFromSwift(MethodCall call) async {
+    // Need to improve
+    print('calling this method ${call.method}');
+    switch (call.method) {
+      case 'initialized':
+        // final Map arguments = call.arguments;
+        // print(arguments['data']);
+        playerState = BetterPlayerEventType.initialized;
+      case 'playing':
+        playerState = BetterPlayerEventType.playing;
+      case 'paused':
+        playerState = BetterPlayerEventType.paused;
+      case 'finished':
+        playerState = BetterPlayerEventType.finished;
+      default:
+        playerState = BetterPlayerEventType.paused;
+    }
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Padding(
-      padding: EdgeInsets.all(8.0),
-      child: UiKitView(viewType: playerSwiftUiView),
-    ));
+    return Stack(
+      children: [
+        const UiKitView(viewType: playerSwiftUiView),
+        GestureDetector(
+          onTap: () {
+            log("Current Player State :$playerState");
+
+            if (playerState == BetterPlayerEventType.playing) {
+              FlutterNativeCodeListenerMethodChannel.pause(0);
+            } else if (playerState == BetterPlayerEventType.finished){
+               FlutterNativeCodeListenerMethodChannel.reStart(0);
+            }
+            else {
+              FlutterNativeCodeListenerMethodChannel.play(0);
+            }
+          },
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.transparent,
+          ),
+        ),
+      ],
+    );
   }
 }

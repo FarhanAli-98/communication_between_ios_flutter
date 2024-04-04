@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/FlutterMethodChannel.dart';
 import 'package:prototype/player/player_builder.dart';
-import 'package:prototype/ui_view_swift.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    FlutterNativeCodeListenerMethodChannel.configureChannel();
+    FlutterNativeCodeListenerMethodChannel.init();
   }
 
   @override
