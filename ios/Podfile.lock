@@ -1,3 +1,34 @@
-PODFILE CHECKSUM: f7013b2a17970a462c6b72b9caa9c2d7aed8ddc5
+PODS:
+  - Cache (7.1.0)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - Kingfisher (7.11.0)
+
+DEPENDENCIES:
+  - Cache (from `https://github.com/hyperoslo/Cache.git`)
+  - GCDWebServer (~> 3.0)
+  - Kingfisher (~> 7.0)
+
+SPEC REPOS:
+  trunk:
+    - GCDWebServer
+    - Kingfisher
+
+EXTERNAL SOURCES:
+  Cache:
+    :git: https://github.com/hyperoslo/Cache.git
+
+CHECKOUT OPTIONS:
+  Cache:
+    :commit: f44a8f6b5ec27730198725ccc542fef0d1cc6b3d
+    :git: https://github.com/hyperoslo/Cache.git
+
+SPEC CHECKSUMS:
+  Cache: 79717afe1491def3c772c242bc1166766d7b9b36
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+
+PODFILE CHECKSUM: f4804822586cd065afcf0e9d94f80a184ca5a2ac
 
 COCOAPODS: 1.15.2

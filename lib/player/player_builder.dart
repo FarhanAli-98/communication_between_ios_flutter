@@ -31,6 +31,9 @@ class _QuestionsBuilderState extends State<QuestionsBuilder> with WidgetsBinding
               return PlayerSwiftView(
                 link: listOfVideos[index].url,
                 thumbnail: listOfVideos[index].thumbnail,
+                autoPlay: true,
+                cacheConfiguration: true,
+                looping: true,
               );
             }));
   }

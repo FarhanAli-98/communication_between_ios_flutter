@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
                 backgroundColor: MaterialStateColor.resolveWith((states) => Colors.yellow),
               ),
               onPressed: () async {
-                _batteryLevel = await FlutterNativeCodeListenerMethodChannel.getBatteryLevel();
+                // _batteryLevel = await FlutterNativeCodeListenerMethodChannel.getBatteryLevel();
                 setState(() {});
               },
               child: const Text(
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
 
-            const SwiftUiKit(),
+            // const SwiftUiKit(),
             // To show battery percentage.
             Text(_batteryLevel),
           ],

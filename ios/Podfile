@@ -6,6 +6,10 @@ target 'Runner' do
   use_frameworks!
 
   # Pods for Runner
+  pod 'Kingfisher', '~> 7.0'
+  pod "GCDWebServer", "~> 3.0"
+  pod 'Cache', :git => 'https://github.com/hyperoslo/Cache.git'
+
 
   target 'RunnerTests' do
     inherit! :search_paths
